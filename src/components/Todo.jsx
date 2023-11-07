@@ -7,7 +7,7 @@ const StDiv = styled.div`
   margin-left: 20px;
 `;
 const StTodoDiv = styled.div`
-  border: 1px solid black;
+  border: 1px solid ${(props) => (props.isDone ? "blue" : "red")};
   width: 300px;
   height: 200px;
 `;
@@ -37,7 +37,7 @@ const Todo = ({ toDos, setToDos }) => {
           .filter((item) => item.isDone === false)
           .map((item) => {
             return (
-              <StTodoDiv key={item.id}>
+              <StTodoDiv key={item.id} isDone={item.isDone}>
                 <h3>{item.title}</h3>
                 <p>{item.content}</p>
                 <div>
@@ -54,7 +54,7 @@ const Todo = ({ toDos, setToDos }) => {
           .filter((item) => item.isDone === true)
           .map((item) => {
             return (
-              <StTodoDiv key={item.id}>
+              <StTodoDiv key={item.id} isDone={item.isDone}>
                 <h3>{item.title}</h3>
                 <p>{item.content}</p>
                 <div>
