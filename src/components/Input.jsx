@@ -10,6 +10,8 @@ function Input({ setTodo, toDos }) {
     e.preventDefault();
     const newToDo = { id: uuid(), title, content, isDone: false };
     setTodo([...toDos, newToDo]);
+    setTitle("");
+    setContent("");
   };
   const titleChangeHndlr = (event) => {
     setTitle(event.target.value);
@@ -24,7 +26,7 @@ function Input({ setTodo, toDos }) {
       <label>내용</label>
 
       <input onChange={contentChangeHndlr} value={content} />
-      <button>등록하기</button>
+      <button type="submit">등록하기</button>
     </form>
   );
 }
