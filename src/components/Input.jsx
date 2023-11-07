@@ -22,7 +22,7 @@ function Input({ setTodo, toDos }) {
   return (
     <form onSubmit={submitHndlr}>
       <label>제목</label>
-      <input onChange={titleChangeHndlr} value={title} />
+      <input required onChange={titleChangeHndlr} value={title} />
       <label>내용</label>
 
       <input onChange={contentChangeHndlr} value={content} />
